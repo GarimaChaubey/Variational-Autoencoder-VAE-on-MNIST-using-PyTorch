@@ -1,5 +1,6 @@
 # Variational-Autoencoder-VAE-on-MNIST-using-PyTorch
 [![dep2](https://img.shields.io/badge/PyTorch-0.4.1-orange.svg)](https://pytorch.org/)
+
 This repository contains an implementation of a Variational Autoencoder (VAE) using PyTorch on the MNIST dataset. The goal is to learn a compressed latent representation of digit images and reconstruct them while understanding the generative capabilities of VAEs.
 
 ## What is a VAE?
