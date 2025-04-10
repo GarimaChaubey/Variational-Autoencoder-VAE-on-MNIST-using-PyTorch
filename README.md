@@ -90,3 +90,6 @@ The image above compares the original MNIST digits (top row) with their reconstr
 - This reflects that the encoder has learned a meaningful latent representation, and the decoder is able to reconstruct from it with decent accuracy.
 
 This qualitative evaluation complements the decreasing training loss, confirming that the VAE is functioning effectively.
+
+## Refrences
+-https://arxiv.org/pdf/1312.6114
