@@ -43,26 +43,27 @@ The encoder compresses the **28x28** input image into a latent space using linea
 - Mean vector: `μ`
 - Log-variance vector: `log(σ²)`
 
-These are learned representations of the input distribution.
+These are the learned parameters representing the distribution of the latent space.
 
 ---
 
 ### Reparameterization Trick
 
-To allow backpropagation through stochastic nodes, we apply:
+To allow gradients to flow through the stochastic latent space, we apply the reparameterization trick:
 
-![Reparameterization Equation](https://latex.codecogs.com/png.image?\dpi{120}&space;z&space;=&space;\mu&space;+&space;\sigma&space;\cdot&space;\epsilon,\quad\epsilon\sim\mathcal{N}(0,&space;I))
+`z = μ + σ * ε`, where `ε ∼ N(0, I)`
 
-This trick enables sampling from `z` while allowing gradients to flow through the encoder during training.
+This enables sampling from the distribution while maintaining differentiability for backpropagation.
 
 ---
 
 ### Decoder
 
-The decoder reconstructs the input image from the sampled latent variable `z`.  
-It uses fully connected layers to expand the compressed representation back to the **28x28** shape.
+The decoder reconstructs the original input from the sampled latent vector `z`.
 
----
+It expands the latent representation back to a `28x28` image using fully connected layers.
+
+
 
 
 
