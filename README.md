@@ -18,13 +18,22 @@ A Variational Autoencoder (VAE) is a type of generative model that learns not ju
 
 ## 📐 Mathematical Intuition
 
-The ELBO equation is:
+The Variational Autoencoder (VAE) aims to maximize the likelihood of input data `p(x)` by optimizing the **Evidence Lower Bound (ELBO)**:
 
-![ELBO Equation](https://latex.codecogs.com/png.image?\dpi{120}&space;\log&space;p(x)&space;\geq&space;\mathbb{E}_{q(z|x)}[\log&space;p(x|z)]&space;-&space;\text{KL}(q(z|x)&space;\|&space;p(z)))
+**ELBO Objective:**
 
-This means the VAE optimizes a combination of:
-- A reconstruction loss (how well it recreates the input)
-- A KL divergence loss (how close the latent distribution is to a standard Gaussian)
+    log p(x) ≥ E_q(z|x)[log p(x|z)] - KL(q(z|x) || p(z))
+
+### 🔍 Explanation:
+
+- **Reconstruction Loss** `E_q(z|x)[log p(x|z)]`:  
+  Encourages the decoder to reconstruct the input accurately from the latent vector.
+
+- **KL Divergence** `KL(q(z|x) || p(z))`:  
+  A regularization term that aligns the learned latent distribution `q(z|x)` with a prior distribution `p(z) ~ N(0, I)`.
+
+This balance ensures the VAE learns a compressed latent space while keeping it smooth and continuous, ideal for generating new data.
+
 
 
 
