@@ -16,7 +16,7 @@ A Variational Autoencoder (VAE) is a type of generative model that learns not ju
 | Decoder maps fixed code to reconstruction    | Decoder samples from learned distribution using **reparameterization** |
 | Not generative                               | Fully **generative**                                             |
 
-## 📐 Mathematical Intuition
+## Mathematical Intuition
 
 The Variational Autoencoder (VAE) aims to maximize the likelihood of input data `p(x)` by optimizing the **Evidence Lower Bound (ELBO)**:
 
