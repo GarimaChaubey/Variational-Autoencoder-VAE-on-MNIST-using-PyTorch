@@ -92,5 +92,7 @@ The image above compares the original MNIST digits (top row) with their reconstr
 
 This qualitative evaluation complements the decreasing training loss, confirming that the VAE is functioning effectively.
 
+📘 **View the Notebook**: [autoencoders.ipynb](https://github.com/GarimaChaubey/Variational-Autoencoder-VAE-on-MNIST-using-PyTorch/blob/main/variational-autoencoder-on-mnist.ipynb)
+
 ## Refrences
 -https://arxiv.org/pdf/1312.6114
