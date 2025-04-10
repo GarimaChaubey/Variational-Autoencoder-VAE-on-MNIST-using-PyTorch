@@ -34,6 +34,36 @@ The Variational Autoencoder (VAE) aims to maximize the likelihood of input data 
 
 This balance ensures the VAE learns a compressed latent space while keeping it smooth and continuous, ideal for generating new data.
 
+## Architecture
+
+### Encoder
+
+The encoder compresses the **28x28** input image into a latent space using linear layers and computes:
+
+- Mean vector: `μ`
+- Log-variance vector: `log(σ²)`
+
+These are learned representations of the input distribution.
+
+---
+
+### Reparameterization Trick
+
+To allow backpropagation through stochastic nodes, we apply:
+
+![Reparameterization Equation](https://latex.codecogs.com/png.image?\dpi{120}&space;z&space;=&space;\mu&space;+&space;\sigma&space;\cdot&space;\epsilon,\quad\epsilon\sim\mathcal{N}(0,&space;I))
+
+This trick enables sampling from `z` while allowing gradients to flow through the encoder during training.
+
+---
+
+### Decoder
+
+The decoder reconstructs the input image from the sampled latent variable `z`.  
+It uses fully connected layers to expand the compressed representation back to the **28x28** shape.
+
+---
+
 
 
 
