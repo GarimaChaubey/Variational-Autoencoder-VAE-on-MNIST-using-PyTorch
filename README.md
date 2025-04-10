@@ -63,8 +63,19 @@ The decoder reconstructs the original input from the sampled latent vector `z`.
 
 It expands the latent representation back to a `28x28` image using fully connected layers.
 
+## Training Loss
 
+![image](https://github.com/user-attachments/assets/98e88b1e-ec1d-476f-905a-ecfdde63437d)
 
+The graph above shows the training loss curve for the Variational Autoencoder (VAE) over 10 epochs.
+
+- At epoch 0, the loss is quite high (~103), which is expected as the model starts with random weights.
+
+- As the training progresses, the loss consistently decreases, indicating that the model is successfully learning to encode and decode MNIST digits.
+
+- By epoch 9, the loss stabilizes around ~49, suggesting convergence and effective learning of the latent space representation.
+
+This declining trend validates that the combination of reconstruction loss and KL divergence is being minimized effectively, leading to meaningful latent representations.
 
 
 
