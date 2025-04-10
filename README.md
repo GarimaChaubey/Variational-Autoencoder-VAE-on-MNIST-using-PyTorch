@@ -18,20 +18,13 @@ A Variational Autoencoder (VAE) is a type of generative model that learns not ju
 
 ## 📐 Mathematical Intuition
 
-The Variational Autoencoder (VAE) seeks to **maximize the likelihood** of the observed data \( p(x) \) indirectly by optimizing the **Evidence Lower Bound (ELBO)**:
+The ELBO equation is:
 
-\[
-\log p(x) \geq \mathbb{E}_{q(z|x)}[\log p(x|z)] - \text{KL}(q(z|x) \| p(z))
-\]
+![ELBO Equation](https://latex.codecogs.com/png.image?\dpi{120}&space;\log&space;p(x)&space;\geq&space;\mathbb{E}_{q(z|x)}[\log&space;p(x|z)]&space;-&space;\text{KL}(q(z|x)&space;\|&space;p(z)))
 
-### 🔍 Explanation:
+This means the VAE optimizes a combination of:
+- A reconstruction loss (how well it recreates the input)
+- A KL divergence loss (how close the latent distribution is to a standard Gaussian)
 
-- **First Term** \( \mathbb{E}_{q(z|x)}[\log p(x|z)] \):  
-  This is the **reconstruction loss**, which encourages the decoder to produce outputs close to the input data. It's typically calculated using Binary Cross-Entropy (BCE) or Mean Squared Error (MSE).
-
-- **Second Term** \( \text{KL}(q(z|x) \| p(z)) \):  
-  This is the **Kullback–Leibler divergence**, which regularizes the latent space by forcing the approximate posterior \( q(z|x) \) to be close to the prior distribution \( p(z) \sim \mathcal{N}(0, I) \).
-
-> This balance allows VAEs to learn structured, continuous, and meaningful latent representations that can be sampled from during generation.
 
 
