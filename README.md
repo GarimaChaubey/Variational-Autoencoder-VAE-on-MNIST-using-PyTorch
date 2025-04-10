@@ -86,7 +86,7 @@ The image above compares the original MNIST digits (top row) with their reconstr
 
 - We can see that the reconstructed digits retain the overall shape and identity of the original images.
 
-- Although there's a slight blurriness in the reconstructions (a known trait of VAEs due to their probabilistic nature), the model has successfully captured the semantic structure of the digits.
+- Although **there's a slight blurriness in the reconstructions** (a known trait of VAEs due to their probabilistic nature), the model has successfully captured the semantic structure of the digits.
 
 - This reflects that the encoder has learned a meaningful latent representation, and the decoder is able to reconstruct from it with decent accuracy.
 
