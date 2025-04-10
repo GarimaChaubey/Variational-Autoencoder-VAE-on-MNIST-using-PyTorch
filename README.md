@@ -16,5 +16,22 @@ A Variational Autoencoder (VAE) is a type of generative model that learns not ju
 | Decoder maps fixed code to reconstruction    | Decoder samples from learned distribution using **reparameterization** |
 | Not generative                               | Fully **generative**                                             |
 
+## 📐 Mathematical Intuition
+
+The Variational Autoencoder (VAE) seeks to **maximize the likelihood** of the observed data \( p(x) \) indirectly by optimizing the **Evidence Lower Bound (ELBO)**:
+
+\[
+\log p(x) \geq \mathbb{E}_{q(z|x)}[\log p(x|z)] - \text{KL}(q(z|x) \| p(z))
+\]
+
+### 🔍 Explanation:
+
+- **First Term** \( \mathbb{E}_{q(z|x)}[\log p(x|z)] \):  
+  This is the **reconstruction loss**, which encourages the decoder to produce outputs close to the input data. It's typically calculated using Binary Cross-Entropy (BCE) or Mean Squared Error (MSE).
+
+- **Second Term** \( \text{KL}(q(z|x) \| p(z)) \):  
+  This is the **Kullback–Leibler divergence**, which regularizes the latent space by forcing the approximate posterior \( q(z|x) \) to be close to the prior distribution \( p(z) \sim \mathcal{N}(0, I) \).
+
+> This balance allows VAEs to learn structured, continuous, and meaningful latent representations that can be sampled from during generation.
 
 
