@@ -63,7 +63,8 @@ The decoder reconstructs the original input from the sampled latent vector `z`.
 
 It expands the latent representation back to a `28x28` image using fully connected layers.
 
-## Training Loss
+## Result 
+### Training Loss
 
 ![image](https://github.com/user-attachments/assets/98e88b1e-ec1d-476f-905a-ecfdde63437d)
 
@@ -77,5 +78,15 @@ The graph above shows the training loss curve for the Variational Autoencoder (V
 
 This declining trend validates that the combination of reconstruction loss and KL divergence is being minimized effectively, leading to meaningful latent representations.
 
+### Original (Top) vs Reconstructed (Bottom)
+![image](https://github.com/user-attachments/assets/668dcae0-73ca-4b6f-a21f-90a676d42408)
 
+The image above compares the original MNIST digits (top row) with their reconstructions by the VAE (bottom row) after training.
 
+- We can see that the reconstructed digits retain the overall shape and identity of the original images.
+
+- Although there's a slight blurriness in the reconstructions (a known trait of VAEs due to their probabilistic nature), the model has successfully captured the semantic structure of the digits.
+
+- This reflects that the encoder has learned a meaningful latent representation, and the decoder is able to reconstruct from it with decent accuracy.
+
+This qualitative evaluation complements the decreasing training loss, confirming that the VAE is functioning effectively.
